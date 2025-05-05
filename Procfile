@@ -1,1 +1,1 @@
-web: python app.js
+web: python app.py
