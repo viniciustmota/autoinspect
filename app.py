@@ -23,6 +23,5 @@ def executar():
     return f"Automação iniciada para a matrícula: {matricula}"
 
 if __name__ == '__main__':
-    # Configurar a porta conforme o ambiente (para o Railway)
-    port = int(os.environ.get('PORT', 8000))
-    app.run(host='0.0.0.0', port=port, debug=True)
+     # O Gunicorn cuidará de rodar o servidor, portanto não é necessário deixar o app.run()
+    pass
