@@ -4,11 +4,9 @@ import main  # Importe o main.py, onde você tem a função de automação
 
 app = Flask(__name__)
 
-
 @app.route('/')
 def index():
     return render_template('index.html')
-
 
 @app.route('/executar', methods=['POST'])
 def executar():
@@ -25,11 +23,6 @@ def executar():
     return f"Automação iniciada para a matrícula: {matricula}"
 
 if __name__ == '__main__':
-    app.run(debug=True)
-
-from flask import Flask, request, render_template
-import os
-import pandas as pd
-from automacao import rodar_automacao
-
-app = Flask(__name__)
+    # Configurar a porta conforme o ambiente (para o Railway)
+    port = int(os.environ.get('PORT', 8000))
+    app.run(host='0.0.0.0', port=port, debug=True)
